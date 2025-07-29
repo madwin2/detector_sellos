@@ -40,7 +40,7 @@ def root():
 
 @app.get("/health")
 def health():
-    return {"status": "healthy"}
+    return {"status": "ok", "message": "API funcionando correctamente"}
 
 @app.post("/predict")
 async def predict(
