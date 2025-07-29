@@ -1,7 +1,8 @@
 services:
   - type: web
-    name: clip-api
+    name: detector-sellos
     env: python
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
-    startCommand: uvicorn api:app --host 0.0.0.0 --port $PORT
+    startCommand: python -m uvicorn api_render:app --host 0.0.0.0 --port $PORT
     plan: free
+    healthCheckPath: /health
